@@ -22,13 +22,16 @@ struct ProcessControlBlock table[MAX_PROCESSES];
         int next_pid = 1; // This variable is used to assign unique PIDs to new processes.
     
 
-        void create_process(){
+
+        /* Function to create a new process. It prompts the user for process details, checks if the system can accommodate more processes, and then adds the new process to the process table.
+        */
+void create_process(){
             if (count >= MAX_PROCESSES){
                 printf("\nERROR! system is full. Cannot create new process.\n");
                 return;
             }
 
-struct ProcessControlBlock new_process;
+            struct ProcessControlBlock new_process;
             new_process.pid = next_pid++;
             new_process.waiting_time = 0;
             new_process.turnaround_time = 0;
