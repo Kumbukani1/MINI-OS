@@ -17,6 +17,10 @@ struct ProcessControlBlock {
             int memory_size;
     };
 
+void print_line() {
+            printf("=====================================================================\n");
+        }       
+
 struct ProcessControlBlock table[MAX_PROCESSES];
         int count = 0; // This count variable keeps track of the number of processes in the table.
         int next_pid = 1; // This variable is used to assign unique PIDs to new processes.
@@ -27,7 +31,7 @@ struct ProcessControlBlock table[MAX_PROCESSES];
         */
 void create_process(){
             if (count >= MAX_PROCESSES){
-                printf("\nERROR! system is full. Cannot create new process.\n");
+                printf("\nERROR! System is full. Cannot create new process.\n");
                 return;
             }
 
@@ -57,7 +61,8 @@ void create_process(){
             table[count] = new_process;
             count++;
 
-            printf("\n[SUCCESS] Task '%s' created with PID %d\n", new_process.name, new_process.pid);
+            printf("\nSUCCESS, Task %s created with PID %d\n",
+                 new_process.name, new_process.pid);
         }
 
 
@@ -66,13 +71,13 @@ void create_process(){
         
 void display_processes() {
             if(count == 0) {
-                printf("\n[INFO] No tasks created yet.\n");
+                printf("\n No tasks created yet.\n");
                 return;
             }
 
-            printf("\n=====================================================================\n");
+                print_line();
             printf("                    PROCESS TABLE                                   \n");
-            printf("=====================================================================\n");
+                print_line();
             printf("%-5s %-22s %-5s %-6s %-8s %-7s %-12s\n",
                 "PID", "Task Name", "Pri", "Burst", "Arrival", "Mem MB", "State");
             printf("---------------------------------------------------------------------\n");
@@ -89,7 +94,7 @@ void display_processes() {
                     table[i].state);
             }
 
-            printf("=====================================================================\n");
+             print_line();
             printf("Total tasks: %d\n", count);
         }
 
@@ -97,7 +102,7 @@ void display_processes() {
         /* Function to terminate a process based on its PID. It checks if the process exists and is not already terminated before marking it as terminated.*/
  void terminate_process() {
             if(count == 0) {
-                printf("\n[INFO] No tasks available to terminate.\n");
+                printf("\n No tasks available to terminate.\n");
                 return;
             }
 
@@ -111,18 +116,18 @@ void display_processes() {
 
                     // check if already terminated
                     if(strcmp(table[i].state, "Terminated") == 0) {
-                        printf("\n[INFO] Task PID %d is already terminated.\n", target_pid);
+                        printf("\n Task PID %d is already terminated.\n", target_pid);
                         return;
                     }
 
                     strcpy(table[i].state, "Terminated");
-                    printf("\n[SUCCESS] Task '%s' with PID %d has been terminated.\n",
+                    printf("\nSUCCESS, Task '%s' with PID %d has been terminated.\n",
                         table[i].name, target_pid);
                     return;
                 }
             }
 
-            printf("\n[ERROR] No task found with PID %d\n", target_pid);
+            printf("\nERROR, no task found with PID %d\n", target_pid);
         }
 
 
@@ -131,10 +136,10 @@ void display_processes() {
         int main() {
     int choice;
 
-    printf("\n=====================================================\n");
+      print_line();
     printf("   SMART EMERGENCY RESPONSE CENTER      \n");
     printf("       Copperbelt University             \n");
-    printf("=====================================================\n");
+      print_line();
 
     do {
         printf("\n----- PROCESS MANAGEMENT MENU -----\n");
@@ -147,7 +152,7 @@ void display_processes() {
         scanf("%d", &choice);
 
         switch(choice) {
-            case 1:
+            case 1:                         
                 create_process();
                 break;
             case 2:
@@ -157,10 +162,10 @@ void display_processes() {
                 terminate_process();
                 break;
             case 0:
-                printf("\n[INFO] Exiting System. Goodbye!\n");
+                printf("\nExiting System. Goodbye!\n");
                 break;
             default:
-                printf("\n[ERROR] Invalid choice. Try again.\n");
+                printf("\nERROR, invalid choice. Try again.\n");
         }
 
     } while(choice != 0);

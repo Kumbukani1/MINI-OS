@@ -272,7 +272,7 @@ int main() {
                     proc[n].turnaround_time = 0;
                     strcpy(proc[n].state, "Ready");
                     n++;
-                    printf("\nSUCCESS, task added!\n");
+                    printf("\nTask added successfully!\n");
                 }
                 break;
             case 2:
