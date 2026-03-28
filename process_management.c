@@ -39,6 +39,8 @@ void create_process(){
             new_process.pid = next_pid++;
             new_process.waiting_time = 0;
             new_process.turnaround_time = 0;
+            strcpy(new_process.state, "New");
+
 
             printf("\n--- New Emergency Task ---\n");
 

@@ -90,11 +90,15 @@ void display_memory() {
         }
          printf("Free Blocks    : %d  (%d MB)\n", free_blocks, free_memory);
          printf("Occupied Blocks: %d  (%d MB)\n", occupied_blocks, occupied_memory);
+         printf("Fragmentation  : %d MB of memory is fragmented/wasted\n", free_memory);
          print_line();
     }
 
 
 void first_fit( char process_name[], int process_size) {
+
+     printf("\nINFO, %s is in WAITING state - searching for memory...\n", process_name);
+
 
     for (int i = 0; i < block_counter; i++) {
 
@@ -108,10 +112,14 @@ void first_fit( char process_name[], int process_size) {
         printf("\n ERROR, no suitable memory block found for process %s (%dMB)\n",process_name, process_size);
 }
 
-void best_fit( char processs_name[], int process_size) {
+void best_fit( char process_name[], int process_size) {
+
+         printf("\nINFO, %s is in WAITING state - searching for memory...\n", process_name);
+
     int best_index = -1;
 
-    for (int i = 0; i, block_counter; i++) {
+
+    for (int i = 0; i < block_counter; i++) {
         if (memory[i].is_free ==1 && memory[i].block_size >= process_size) {
             if(best_index == -1 || memory[i].block_size < memory[best_index].block_size) {
                 best_index = i;
@@ -121,17 +129,20 @@ void best_fit( char processs_name[], int process_size) {
 
     if(best_index != -1) {
         memory[best_index].is_free = 0;
-        strcpy(memory[best_index].process_name, processs_name);
+        strcpy(memory[best_index].process_name, process_name);
         printf("\n SUCCESS, Process %s allocated to Block %d (%d MB)\n",
-               processs_name, memory[best_index].block_id, memory[best_index].block_size);
+               process_name, memory[best_index].block_id, memory[best_index].block_size);
     }
     else {
-        printf("\n ERROR, no suitablbe memory block found for process %s (%d MB ) \n", processs_name, process_size);
+        printf("\n ERROR, no suitablbe memory block found for process %s (%d MB ) \n", process_name, process_size);
     }
 }
 
 
 void worst_fit(char process_name[], int process_size) {
+
+    printf("\nINFO, %s is in WAITING state - searching for memory...\n", process_name);
+
     int worst_index = -1;
 
     for(int i = 0; i < block_counter; i++) {

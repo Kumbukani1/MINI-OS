@@ -84,6 +84,16 @@ void display_fcfs_results(struct ProcessControlBlock proc[], int n) {
      print_line();
     printf("Average Waiting Time    : %.2f seconds\n", total_waiting / n);
     printf("Average Turnaround Time : %.2f seconds\n", total_turnaround / n);
+
+            // CPU utilization calculations
+        int total_burst = 0;
+        for(int i = 0; i < n; i++) {
+            total_burst += proc[i].burst_time;
+        }
+        int total_time = proc[n-1].turnaround_time + proc[0].arrival_time;
+        printf("CPU Utilization         : %.2f%%\n",
+            (float)total_burst / total_time * 100);
+
      print_line();
 }
 
@@ -156,6 +166,15 @@ void display_sjf_results(struct ProcessControlBlock proc[], int n) {
     print_line();
     printf("Average Waiting Time    : %.2f seconds\n", total_waiting / n);
     printf("Average Turnaround Time : %.2f seconds\n", total_turnaround / n);
+
+      // CPU utilization calculations
+        int total_burst = 0;
+        for(int i = 0; i < n; i++) {
+            total_burst += proc[i].burst_time;
+        }
+        int total_time = proc[n-1].turnaround_time + proc[0].arrival_time;
+        printf("CPU Utilization         : %.2f%%\n",
+            (float)total_burst / total_time * 100);
     print_line();
 }
 
@@ -224,6 +243,15 @@ void display_priority_results(struct ProcessControlBlock proc[], int n) {
     print_line();
     printf("Average Waiting Time    : %.2f seconds\n", total_waiting / n);
     printf("Average Turnaround Time : %.2f seconds\n", total_turnaround / n);
+
+      // CPU utilization calculations
+        int total_burst = 0;
+        for(int i = 0; i < n; i++) {
+            total_burst += proc[i].burst_time;
+        }
+        int total_time = proc[n-1].turnaround_time + proc[0].arrival_time;
+        printf("CPU Utilization         : %.2f%%\n",
+            (float)total_burst / total_time * 100);
     print_line();
 }
 
