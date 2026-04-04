@@ -1,0 +1,1 @@
+gcc main.c process_management.c cpu_scheduling.c memory_management.c file_management.c -o mini_os && ./mini_os

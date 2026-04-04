@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+void print_line();
+
 
 #define MAX_BLOCKS 5
 #define MAX_PROCESSES 10
@@ -16,12 +18,6 @@ struct MemoryBlock {
 struct MemoryBlock memory[MAX_BLOCKS];
     int block_counter = 0;
 
-
-
-
-void print_line() {
-    printf("=====================================================================================\n");
-}
 
 void add_memory_block() {
     if(block_counter >= MAX_BLOCKS) {
@@ -166,66 +162,3 @@ void worst_fit(char process_name[], int process_size) {
     }
 }
 
-
-
-int main() {
-    int choice;
-    char process_name[50];
-    int process_size;
-
-    print_line();
-    printf("       SMART EMERGENCY RESPONSE CENTER     \n");
-    printf("            Copperbelt University           \n");
-    print_line();
-
-    do {
-        printf("\n----- MEMORY MANAGEMENT MENU -----\n");
-        printf("1. Add Memory Block\n");
-        printf("2. Display Memory Table\n");
-        printf("3. Allocate Memory - First Fit\n");
-        printf("4. Allocate Memory - Best Fit\n");
-        printf("5. Allocate Memory - Worst Fit\n");
-        printf("0. Exit\n");
-        printf("----------------------------------\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
-        switch(choice) {
-            case 1:
-                add_memory_block();
-                break;
-            case 2:
-                display_memory();
-                break;
-            case 3:
-                printf("\nEnter process name: ");
-                scanf(" %[^\n]", process_name);
-                printf("Enter memory required in MB: ");
-                scanf("%d", &process_size);
-                first_fit(process_name, process_size);
-                break;
-            case 4:
-                printf("\nEnter process name: ");
-                scanf(" %[^\n]", process_name);
-                printf("Enter memory required in MB: ");
-                scanf("%d", &process_size);
-                best_fit(process_name, process_size);
-                break;
-            case 5:
-                printf("\nEnter process name: ");
-                scanf(" %[^\n]", process_name);
-                printf("Enter memory required in MB: ");
-                scanf("%d", &process_size);
-                worst_fit(process_name, process_size);
-                break;
-            case 0:
-                printf("\nExiting Memory. Goodbye!\n");
-                break;
-            default:
-                printf("\nERROR, Invalid choice. Try again.\n");
-        }
-
-    } while(choice != 0);
-
-    return 0;
-}

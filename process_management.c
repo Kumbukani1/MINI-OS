@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+void print_line();
+
 #define MAX_PROCESSES 10 //This is the maximum number of processes our system can handle.
 
 //PCB structure, which holds information about each process.
@@ -17,9 +19,6 @@ struct ProcessControlBlock {
             int memory_size;
     };
 
-void print_line() {
-            printf("=====================================================================\n");
-        }       
 
 struct ProcessControlBlock table[MAX_PROCESSES];
         int count = 0; // This count variable keeps track of the number of processes in the table.
@@ -131,46 +130,3 @@ void display_processes() {
 
             printf("\nERROR, no task found with PID %d\n", target_pid);
         }
-
-
-
-
-        int main() {
-    int choice;
-
-      print_line();
-    printf("   SMART EMERGENCY RESPONSE CENTER      \n");
-    printf("       Copperbelt University             \n");
-      print_line();
-
-    do {
-        printf("\n----- PROCESS MANAGEMENT MENU -----\n");
-        printf("1. Create Emergency Task\n");
-        printf("2. View Process Table\n");
-        printf("3. Terminate a Task\n");
-        printf("0. Exit\n");
-        printf("-----------------------------------\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
-        switch(choice) {
-            case 1:                         
-                create_process();
-                break;
-            case 2:
-                display_processes();
-                break;
-            case 3:
-                terminate_process();
-                break;
-            case 0:
-                printf("\nExiting System. Goodbye!\n");
-                break;
-            default:
-                printf("\nERROR, invalid choice. Try again.\n");
-        }
-
-    } while(choice != 0);
-
-    return 0;
-}

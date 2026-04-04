@@ -1,0 +1,6 @@
+[Thu Apr  2 01:28:11 2026] Mini-OS System Started
+[Thu Apr  2 01:49:28 2026] New emergency task created
+[Thu Apr  2 01:59:47 2026] Mini-OS System Started
+[Thu Apr  2 23:14:39 2026] Mini-OS System Started
+[Sat Apr  4 23:32:42 2026] Mini-OS System Started
+[Sat Apr  4 23:36:16 2026] Memory allocated using Best Fit

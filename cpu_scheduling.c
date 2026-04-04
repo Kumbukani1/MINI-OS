@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+void print_line();
+
 #define MAX_PROCESSES 10
 
 struct ProcessControlBlock {
@@ -15,10 +17,7 @@ struct ProcessControlBlock {
     int memory_size;
 
 };
-    void print_line() {
-        printf("=====================================================================\n");
-    }
-
+   
 
 //FCFS scheduling algorithm implementation
 void sort_by_arrival(struct ProcessControlBlock proc[], int n) {
@@ -257,84 +256,3 @@ void display_priority_results(struct ProcessControlBlock proc[], int n) {
 
 
 
-
-int main() {
-    struct ProcessControlBlock proc[MAX_PROCESSES];
-    int n = 0;
-    int choice;
-
-    print_line();
-    printf("       SMART EMERGENCY RESPONSE CENTER      \n");
-    printf("            Copperbelt University            \n");
-    print_line();
-
-    do {
-        printf("\n----- CPU SCHEDULING MENU -----\n");
-        printf("1. Add Emergency Task\n");
-        printf("2. Run FCFS Scheduling\n");
-        printf("3. Run SJF Scheduling\n");
-        printf("4. Run Priority Scheduling\n");
-        printf("0. Exit\n");
-        printf("-------------------------------\n\n");
-        
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
-        switch(choice) {
-            case 1:
-                if(n >= MAX_PROCESSES) {
-                    printf("\nERROR, system full!\n");
-                } else {
-                    printf("\nEnter task name: ");
-                    scanf(" %[^\n]", proc[n].name);
-                    printf("Enter priority (1=Low, 2=Medium, 3=High): ");
-                    scanf("%d", &proc[n].priority);
-                    printf("Enter burst time in seconds: ");
-                    scanf("%d", &proc[n].burst_time);
-                    printf("Enter arrival time in seconds: ");
-                    scanf("%d", &proc[n].arrival_time);
-                    printf("Enter memory size in MB: ");
-                    scanf("%d", &proc[n].memory_size);
-                    proc[n].pid = n + 1;
-                    proc[n].waiting_time = 0;
-                    proc[n].turnaround_time = 0;
-                    strcpy(proc[n].state, "Ready");
-                    n++;
-                    printf("\nTask added successfully!\n");
-                }
-                break;
-            case 2:
-                if(n == 0) {
-                    printf("\nERROR, no tasks added yet!\n");
-                } else {
-                    fcfs(proc, n);
-                    display_fcfs_results(proc, n);
-                }
-                break;
-            case 3:
-                if(n == 0) {
-                    printf("\nERROR, no tasks added yet!\n");
-                } else {
-                    sjf(proc, n);
-                    display_sjf_results(proc, n);
-                }
-                break;
-            case 4:
-                if(n == 0) {
-                    printf("\nERROR, no tasks added yet!\n");
-                } else {
-                    priority_scheduling(proc, n);
-                    display_priority_results(proc, n);
-                }
-                break;
-            case 0:
-                printf("\n Exiting the system. Goodbye!\n");
-                break;
-            default:
-                printf("\nERROR, invalid choice. Try again.\n");
-        }
-
-    } while(choice != 0);
-
-    return 0;
-}

@@ -2,11 +2,10 @@
 #include <string.h>
 #include <time.h>
 
-#define LOG_FILE "Emergency_log.txt"
 
-void print_line() {
-    printf("======================================================================================\n");
-}
+void print_line();
+
+#define LOG_FILE "Emergency_log.txt"
 
 
 void write_log(char message[]) {
@@ -71,3 +70,4 @@ void clear_log() {
     fclose(log_file);
     printf("\nSUCCESS, Log file cleared!\n");
 }
+
