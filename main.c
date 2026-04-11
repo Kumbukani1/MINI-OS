@@ -45,10 +45,10 @@ void process_management_menu() {
                 write_log("Emergency task terminated");
                 break;
             case 0:
-                printf("\nINFO, Returning to Main Menu...\n");
+                printf("\n Returning to Main Menu.......\n");
                 break;
             default:
-                printf("\nERROR, Invalid choice. Try again.\n");
+                printf("\nError, Invalid choice. Try again.\n");
         }
 
     } while(choice != 0);
@@ -73,7 +73,7 @@ void cpu_scheduling_menu() {
         switch(choice) {
             case 1:
                 if(n >= MAX_PROCESSES) {
-                    printf("\nERROR, System full!\n");
+                    printf("\nError, System full!\n");
                 } else {
                     printf("\nEnter task name: ");
                     scanf(" %[^\n]", proc[n].name);
@@ -90,13 +90,13 @@ void cpu_scheduling_menu() {
                     proc[n].turnaround_time = 0;
                     strcpy(proc[n].state, "Ready");
                     n++;
-                    printf("\nSUCCESS, Task added!\n");
+                    printf("\nSuccess, Task added!\n");
                     write_log("CPU scheduling task added");
                 }
                 break;
             case 2:
                 if(n == 0) {
-                    printf("\nERROR, No tasks added yet!\n");
+                    printf("\nError, No tasks added yet!\n");
                 } else {
                     fcfs(proc, n);
                     display_fcfs_results(proc, n);
@@ -105,7 +105,7 @@ void cpu_scheduling_menu() {
                 break;
             case 3:
                 if(n == 0) {
-                    printf("\nERROR, No tasks added yet!\n");
+                    printf("\nError, No tasks added yet!\n");
                 } else {
                     sjf(proc, n);
                     display_sjf_results(proc, n);
@@ -114,7 +114,7 @@ void cpu_scheduling_menu() {
                 break;
             case 4:
                 if(n == 0) {
-                    printf("\nERROR, No tasks added yet!\n");
+                    printf("\nError, No tasks added yet!\n");
                 } else {
                     priority_scheduling(proc, n);
                     display_priority_results(proc, n);
@@ -122,10 +122,10 @@ void cpu_scheduling_menu() {
                 }
                 break;
             case 0:
-                printf("\nINFO, Returning to Main Menu...\n");
+                printf("\nReturning to Main Menu........\n");
                 break;
             default:
-                printf("\nERROR, Invalid choice. Try again.\n");
+                printf("\nError, Invalid choice. Try again.\n");
         }
 
     } while(choice != 0);
@@ -182,10 +182,10 @@ void memory_management_menu() {
                 write_log("Memory allocated using Worst Fit");
                 break;
             case 0:
-                printf("\nINFO, Returning to Main Menu...\n");
+                printf("\nReturning to Main Menu.......\n");
                 break;
             default:
-                printf("\nERROR, Invalid choice. Try again.\n");
+                printf("\nError, Invalid choice. Try again.\n");
         }
 
     } while(choice != 0);
@@ -219,10 +219,10 @@ void file_management_menu() {
                 clear_log();
                 break;
             case 0:
-                printf("\nINFO, Returning to Main Menu...\n");
+                printf("\nReturning to Main Menu...\n");
                 break;
             default:
-                printf("\nERROR, Invalid choice. Try again.\n");
+                printf("\nError, Invalid choice. Try again.\n");
         }
 
     } while(choice != 0);
@@ -240,7 +240,7 @@ int main() {
 
     print_line();
     printf("       SMART EMERGENCY RESPONSE CENTER      \n");
-    printf("             Copperbelt University            \n");
+    printf("             Kitwe City Council            \n");
     print_line();
 
     write_log("Mini-OS System Started");
@@ -271,11 +271,11 @@ int main() {
                 break;
             case 0:
                 write_log("Mini-OS System Shutdown");
-                printf("\nINFO, Shutting down Mini-OS. Goodbye!\n");
+                printf("\n Shutting down Mini-OS. Goodbye!\n");
                 print_line();
                 break;
             default:
-                printf("\nERROR, Invalid choice. Try again.\n");
+                printf("\nError, Invalid choice. Try again.\n");
         }
 
     } while(choice != 0);

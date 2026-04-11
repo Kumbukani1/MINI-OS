@@ -30,7 +30,7 @@ struct ProcessControlBlock table[MAX_PROCESSES];
         */
 void create_process(){
             if (count >= MAX_PROCESSES){
-                printf("\nERROR! System is full. Cannot create new process.\n");
+                printf("\nError! System is full. Cannot create new process.\n");
                 return;
             }
 
@@ -62,7 +62,7 @@ void create_process(){
             table[count] = new_process;
             count++;
 
-            printf("\nSUCCESS, %s created with PID %d\n",
+            printf("\nSuccess, %s created with PID %d\n",
                  new_process.name, new_process.pid);
         }
 
@@ -123,12 +123,12 @@ void execute_process() {
             }
 
             strcpy(table[i].state, "Running");
-            printf("\nSUCCESS,  %s with PID %d is now Running.\n",
+            printf("\nSuccess,  %s with PID %d is now Running.\n",
                    table[i].name, target_pid);
             return;
         }
     }
-    printf("\nERROR, No task found with PID %d\n", target_pid);
+    printf("\nError, No task found with PID %d\n", target_pid);
 }
 
 
@@ -156,12 +156,12 @@ void suspend_process() {
             }
 
             strcpy(table[i].state, "Waiting");
-            printf("\nSUCCESS, Task %s with PID %d is in Waiting state.\n",
+            printf("\nSuccess, Task %s with PID %d is in Waiting state.\n",
                    table[i].name, target_pid);
             return;
         }
     }
-    printf("\nERROR, No task found with PID %d\n", target_pid);
+    printf("\nError, No task found with PID %d\n", target_pid);
 }        
 
         /* Function to terminate a process based on its PID. It checks if the process exists and is not already terminated before marking it as terminated.*/
@@ -186,11 +186,11 @@ void suspend_process() {
                     }
 
                     strcpy(table[i].state, "Terminated");
-                    printf("\nSUCCESS, %s with PID %d has been terminated.\n",
+                    printf("\nSuccess, %s with PID %d has been terminated.\n",
                         table[i].name, target_pid);
                     return;
                 }
             }
 
-            printf("\nERROR, no task found with PID %d\n", target_pid);
+            printf("\nError, no task found with PID %d\n", target_pid);
         }
