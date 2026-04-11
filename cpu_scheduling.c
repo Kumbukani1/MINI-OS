@@ -186,8 +186,8 @@ void sort_by_priority(struct ProcessControlBlock proc[], int n) {
     for(int i = 0; i < n-1; i++){
         for(int j = 0; j < n-1; j++){
 
-            //if the priority of the current process is LOWER than the next process, swap them
-            if(proc[j].priority < proc[j+1].priority) {
+            //if the priority of the current process is greater than the next process, swap them
+            if(proc[j].priority > proc[j+1].priority) { 
                 temp = proc[j];
                 proc[j] = proc[j+1];
                 proc[j+1] = temp;

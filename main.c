@@ -16,7 +16,9 @@ void process_management_menu() {
         printf("\n----- PROCESS MANAGEMENT MENU -----\n");
         printf("1. Create Emergency Task\n");
         printf("2. View Process Table\n");
-        printf("3. Terminate a Task\n");
+        printf("3. Execute a Task\n");
+        printf("4. Suspend a Task\n");
+        printf("5. Terminate a Task\n");
         printf("0. Back to Main Menu\n");
         printf("-----------------------------------\n");
         printf("Enter your choice: ");
@@ -31,6 +33,14 @@ void process_management_menu() {
                 display_processes();
                 break;
             case 3:
+                execute_process();
+                write_log("Emergency task executed");
+                break;
+            case 4:
+                suspend_process();
+                write_log("Emergency task suspended");
+                break;
+            case 5:
                 terminate_process();
                 write_log("Emergency task terminated");
                 break;
@@ -67,7 +77,7 @@ void cpu_scheduling_menu() {
                 } else {
                     printf("\nEnter task name: ");
                     scanf(" %[^\n]", proc[n].name);
-                    printf("Enter priority (1=Low, 2=Medium, 3=High): ");
+                    printf("Enter priority (1=High, 2=Medium, 3=Low): ");
                     scanf("%d", &proc[n].priority);
                     printf("Enter burst time in seconds: ");
                     scanf("%d", &proc[n].burst_time);

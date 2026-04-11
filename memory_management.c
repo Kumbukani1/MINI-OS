@@ -105,7 +105,7 @@ void first_fit( char process_name[], int process_size) {
                  process_name, memory[i].block_id, memory[i].block_size);
         }
     }
-        printf("\n ERROR, no suitable memory block found for process %s (%dMB)\n",process_name, process_size);
+        printf("\n ERROR, no suitable memory block found for %s (%dMB)\n",process_name, process_size);
 }
 
 void best_fit( char process_name[], int process_size) {
@@ -130,7 +130,7 @@ void best_fit( char process_name[], int process_size) {
                process_name, memory[best_index].block_id, memory[best_index].block_size);
     }
     else {
-        printf("\n ERROR, no suitablbe memory block found for process %s (%d MB ) \n", process_name, process_size);
+        printf("\nERROR, no suitablbe memory block found for %s (%d MB ) \n", process_name, process_size);
     }
 }
 
@@ -157,7 +157,7 @@ void worst_fit(char process_name[], int process_size) {
                memory[worst_index].block_size);
     } 
     else {
-        printf("\nERROR, No suitable block found for %s (%dMB)\n",
+        printf("\nERROR, No suitable memory block found for %s (%dMB)\n",
                process_name, process_size);
     }
 }

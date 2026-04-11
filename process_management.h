@@ -21,6 +21,8 @@ extern int next_pid;
 
 void create_process();
 void display_processes();
+void execute_process();
+void suspend_process();
 void terminate_process();
 
 #endif

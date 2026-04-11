@@ -46,7 +46,7 @@ void create_process(){
             printf("Enter task name: ");
             scanf(" %[^\n]", new_process.name);
 
-            printf("Enter priority (1=Low, 2=Medium, 3=High): ");
+            printf("Enter priority (1=High, 2=Medium, 3=Low): ");
             scanf("%d", &new_process.priority);
 
             printf("Enter burst time in seconds: ");
@@ -62,7 +62,7 @@ void create_process(){
             table[count] = new_process;
             count++;
 
-            printf("\nSUCCESS, Task %s created with PID %d\n",
+            printf("\nSUCCESS, %s created with PID %d\n",
                  new_process.name, new_process.pid);
         }
 
@@ -80,7 +80,7 @@ void display_processes() {
             printf("                    PROCESS TABLE                                   \n");
                 print_line();
             printf("%-5s %-22s %-5s %-6s %-8s %-7s %-12s\n",
-                "PID", "Task Name", "Pri", "Burst", "Arrival", "Mem MB", "State");
+                "PID", "Task Name", "Pri", "Burst", "Arrival", "Memory", "State");
             printf("---------------------------------------------------------------------\n");
 
             int i;
@@ -94,11 +94,75 @@ void display_processes() {
                     table[i].memory_size,
                     table[i].state);
             }
-
              print_line();
             printf("Total tasks: %d\n", count);
         }
 
+
+void execute_process() {
+    if(count == 0) {
+        printf("\nNo tasks available to execute.\n");
+        return;
+    }
+
+    int target_pid;
+    printf("\nEnter PID of task to execute: ");
+    scanf("%d", &target_pid);
+
+    for(int i = 0; i < count; i++) {
+        if(table[i].pid == target_pid) {
+
+            if(strcmp(table[i].state, "Terminated") == 0) {
+                printf("\n %s is already terminated.\n", table[i].name);
+                return;
+            }
+
+            if(strcmp(table[i].state, "Running") == 0) {
+                printf("\n %s is already running.\n", table[i].name);
+                return;
+            }
+
+            strcpy(table[i].state, "Running");
+            printf("\nSUCCESS,  %s with PID %d is now Running.\n",
+                   table[i].name, target_pid);
+            return;
+        }
+    }
+    printf("\nERROR, No task found with PID %d\n", target_pid);
+}
+
+
+void suspend_process() {
+    if(count == 0) {
+        printf("\n No tasks available to suspend.\n");
+        return;
+    }
+
+    int target_pid;
+    printf("\nEnter PID of task to suspend: ");
+    scanf("%d", &target_pid);
+
+    for(int i = 0; i < count; i++) {
+        if(table[i].pid == target_pid) {
+
+            if(strcmp(table[i].state, "Terminated") == 0) {
+                printf("\n %s is already terminated.\n", table[i].name);
+                return;
+            }
+
+            if(strcmp(table[i].state, "Waiting") == 0) {
+                printf("\n %s is already suspended.\n", table[i].name);
+                return;
+            }
+
+            strcpy(table[i].state, "Waiting");
+            printf("\nSUCCESS, Task %s with PID %d is in Waiting state.\n",
+                   table[i].name, target_pid);
+            return;
+        }
+    }
+    printf("\nERROR, No task found with PID %d\n", target_pid);
+}        
 
         /* Function to terminate a process based on its PID. It checks if the process exists and is not already terminated before marking it as terminated.*/
  void terminate_process() {
@@ -117,12 +181,12 @@ void display_processes() {
 
                     // check if already terminated
                     if(strcmp(table[i].state, "Terminated") == 0) {
-                        printf("\n Task PID %d is already terminated.\n", target_pid);
+                        printf("\n %s is already terminated.\n", table[i].name);
                         return;
                     }
 
                     strcpy(table[i].state, "Terminated");
-                    printf("\nSUCCESS, Task '%s' with PID %d has been terminated.\n",
+                    printf("\nSUCCESS, %s with PID %d has been terminated.\n",
                         table[i].name, target_pid);
                     return;
                 }
