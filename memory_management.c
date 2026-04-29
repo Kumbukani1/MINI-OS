@@ -117,7 +117,7 @@ void first_fit(char process_name[], int process_size) {
 
 void best_fit( char process_name[], int process_size) {
 
-         printf("\n %s is in WAITING state - searching for memory...\n", process_name);
+         printf("\n%s is in WAITING state - searching for memory...\n", process_name);
 
     int best_index = -1;
 
@@ -144,7 +144,7 @@ void best_fit( char process_name[], int process_size) {
 
 void worst_fit(char process_name[], int process_size) {
 
-    printf("\n %s is in WAITING state - searching for memory...\n", process_name);
+    printf("\n%s is in WAITING state - searching for memory...\n", process_name);
 
     int worst_index = -1;
 
@@ -168,4 +168,3 @@ void worst_fit(char process_name[], int process_size) {
                process_name, process_size);
     }
 }
-

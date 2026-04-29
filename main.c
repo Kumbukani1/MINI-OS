@@ -271,7 +271,7 @@ int main() {
                 break;
             case 0:
                 write_log("Mini-OS System Shutdown");
-                printf("\n Shutting down Mini-OS. Goodbye!\n");
+                printf("\n Shutting down the System. Goodbye!\n");
                 print_line();
                 break;
             default:

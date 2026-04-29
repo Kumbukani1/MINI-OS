@@ -27,9 +27,9 @@ void write_log(char message[]) {
 
     fprintf(log_file, "[%s] %s\n", time_string, message);
 
-    fclose(log_file);
+    fclose(log_file); // Always close the file after writing to it.
 
-    printf("\nSUCCESS, Log entry saved!\n");
+    printf("\nSuccess, Log entry saved!\n");
 }
 
 
@@ -40,7 +40,8 @@ void read_log() {
     log_file = fopen(LOG_FILE, "r");
 
     if(log_file == NULL) {
-        printf("\nINFO, No log file found. No events recorded yet.\n");
+        printf("\nNo log file found. No events recorded yet.\n");
+    
         return;
     }
 
@@ -48,13 +49,20 @@ void read_log() {
     printf("                    EMERGENCY SYSTEM LOG                            \n");
     print_line();
 
+    int lines_read = 0;
+
     while(fgets(line, sizeof(line), log_file) != NULL) {
         printf("%s", line);
+        lines_read++;
+    }
+
+    if(lines_read == 0) {
+        printf("   Log is empty. No events recorded yet.\n");
     }
 
     print_line();
     fclose(log_file);
-}
+    }
 
 
 void clear_log() {
@@ -63,11 +71,11 @@ void clear_log() {
     log_file = fopen(LOG_FILE, "w");
 
     if(log_file == NULL) {
-        printf("\nERROR, Could not clear log file!\n");
+        printf("\nError, Could not clear log file!\n");
         return;
     }
 
     fclose(log_file);
-    printf("\nSUCCESS, Log file cleared!\n");
+    printf("\nSuccess, Log file cleared!\n");
 }
 

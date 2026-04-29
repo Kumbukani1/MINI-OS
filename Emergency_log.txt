@@ -1,92 +1,12 @@
-[Thu Apr  2 01:28:11 2026] Mini-OS System Started
-[Thu Apr  2 01:49:28 2026] New emergency task created
-[Thu Apr  2 01:59:47 2026] Mini-OS System Started
-[Thu Apr  2 23:14:39 2026] Mini-OS System Started
-[Sat Apr  4 23:32:42 2026] Mini-OS System Started
-[Sat Apr  4 23:36:16 2026] Memory allocated using Best Fit
-[Sun Apr  5 01:03:25 2026] Memory allocated using Best Fit
-[Sun Apr  5 01:03:26 2026] Memory allocated using Best Fit
-[Sun Apr  5 01:04:26 2026] Mini-OS System Started
-[Sun Apr  5 23:06:52 2026] Mini-OS System Started
-[Fri Apr 10 13:21:03 2026] Mini-OS System Started
-[Fri Apr 10 13:21:57 2026] New emergency task created
-[Fri Apr 10 13:22:13 2026] Emergency task executed
-[Fri Apr 10 14:07:27 2026] Emergency task suspended
-[Sat Apr 11 14:09:52 2026] Mini-OS System Started
-[Sat Apr 11 14:25:55 2026] Mini-OS System Started
-[Sat Apr 11 14:26:54 2026] New emergency task created
-[Sat Apr 11 14:28:27 2026] Emergency task executed
-[Sat Apr 11 14:28:53 2026] Emergency task suspended
-[Sat Apr 11 14:29:26 2026] Emergency task terminated
-[Sat Apr 11 14:29:47 2026] Emergency task executed
-[Sat Apr 11 14:30:02 2026] Emergency task suspended
-[Sat Apr 11 14:34:30 2026] Emergency task suspended
-[Sat Apr 11 14:34:30 2026] Emergency task suspended
-[Sat Apr 11 14:34:30 2026] Emergency task suspended
-[Sat Apr 11 14:34:30 2026] Emergency task suspended
-[Sat Apr 11 14:34:30 2026] Emergency task suspended
-[Sat Apr 11 14:34:30 2026] Emergency task suspended
-[Sat Apr 11 14:34:52 2026] Mini-OS System Started
-[Sat Apr 11 14:35:33 2026] Mini-OS System Started
-[Sat Apr 11 14:37:06 2026] New emergency task created
-[Sat Apr 11 14:37:20 2026] Emergency task executed
-[Sat Apr 11 14:37:44 2026] Emergency task terminated
-[Sat Apr 11 14:50:12 2026] Mini-OS System Started
-[Sat Apr 11 14:51:59 2026] New emergency task created
-[Sat Apr 11 14:52:34 2026] Emergency task executed
-[Sat Apr 11 14:53:06 2026] Emergency task suspended
-[Sat Apr 11 14:53:30 2026] Emergency task terminated
-[Sat Apr 11 14:53:47 2026] Emergency task terminated
-[Sat Apr 11 14:53:55 2026] Emergency task executed
-[Sat Apr 11 19:40:20 2026] Mini-OS System Started
-[Sat Apr 11 19:56:19 2026] Mini-OS System Started
-[Sat Apr 11 20:43:15 2026] Mini-OS System Started
-[Sat Apr 11 20:47:47 2026] New emergency task created
-[Sat Apr 11 20:49:46 2026] New emergency task created
-[Sat Apr 11 21:23:14 2026] New emergency task created
-[Sat Apr 11 21:25:45 2026] Emergency task executed
-[Sat Apr 11 21:36:09 2026] Emergency task suspended
-[Sat Apr 11 21:36:21 2026] Emergency task executed
-[Sat Apr 11 21:37:03 2026] Emergency task terminated
-[Sat Apr 11 21:37:24 2026] Emergency task suspended
-[Sat Apr 11 21:40:26 2026] Emergency task executed
-[Sat Apr 11 21:41:30 2026] CPU scheduling task added
-[Sat Apr 11 21:42:45 2026] CPU scheduling task added
-[Sat Apr 11 21:43:08 2026] CPU scheduling task added
-[Sat Apr 11 21:43:17 2026] FCFS Scheduling executed
-[Sat Apr 11 22:03:56 2026] SJF Scheduling executed
-[Sat Apr 11 22:04:20 2026] Priority Scheduling executed
-[Sat Apr 11 22:14:36 2026] Memory block added
-[Sat Apr 11 22:14:57 2026] Memory block added
-[Sat Apr 11 22:15:16 2026] Memory block added
-[Sat Apr 11 22:15:30 2026] Memory block added
-[Sat Apr 11 22:25:06 2026] Mini-OS System Started
-[Sat Apr 11 22:28:17 2026] Memory block added
-[Sat Apr 11 22:28:24 2026] Memory block added
-[Sat Apr 11 22:28:30 2026] Memory block added
-[Sat Apr 11 22:28:36 2026] Memory block added
-[Sat Apr 11 22:28:43 2026] Memory block added
-[Sat Apr 11 22:31:52 2026] Mini-OS System Started
-[Sat Apr 11 22:32:02 2026] Memory block added
-[Sat Apr 11 22:33:26 2026] Mini-OS System Started
-[Sat Apr 11 22:33:34 2026] Memory block added
-[Sat Apr 11 22:39:04 2026] Memory block added
-[Sat Apr 11 22:39:13 2026] Memory block added
-[Sat Apr 11 22:39:25 2026] Memory block added
-[Sat Apr 11 22:39:31 2026] Memory block added
-[Sat Apr 11 22:46:32 2026] Memory allocated using First Fit
-[Sat Apr 11 22:54:54 2026] Mini-OS System Started
-[Sat Apr 11 22:55:07 2026] Memory block added
-[Sat Apr 11 22:55:36 2026] Memory block added
-[Sat Apr 11 22:55:40 2026] Memory block added
-[Sat Apr 11 22:56:12 2026] Memory allocated using First Fit
-[Sat Apr 11 22:57:25 2026] Memory allocated using First Fit
-[Sat Apr 11 23:01:50 2026] Memory allocated using Best Fit
-[Sat Apr 11 23:04:51 2026] Memory allocated using Worst Fit
-[Sat Apr 11 23:33:54 2026] Mini-OS System Started
-[Sat Apr 11 23:38:26 2026] Memory block added
-[Sat Apr 11 23:38:31 2026] Memory block added
-[Sat Apr 11 23:38:41 2026] Memory block added
-[Sat Apr 11 23:39:00 2026] Memory block added
-[Sat Apr 11 23:41:33 2026] Memory allocated using Worst Fit
-[Sat Apr 11 23:42:22 2026] Memory allocated using First Fit
+[Mon Apr 13 11:33:10 2026] Mini-OS System Started
+[Tue Apr 14 08:33:01 2026] Mini-OS System Started
+[Tue Apr 14 08:34:50 2026] New emergency task created
+[Tue Apr 14 08:35:19 2026] New emergency task created
+[Tue Apr 14 08:35:56 2026] New emergency task created
+[Tue Apr 14 08:36:51 2026] Mini-OS System Started
+[Tue Apr 14 08:37:38 2026] New emergency task created
+[Tue Apr 14 08:38:16 2026] New emergency task created
+[Tue Apr 14 08:39:09 2026] Emergency task executed
+[Tue Apr 14 08:40:01 2026] Emergency task suspended
+[Tue Apr 14 08:40:14 2026] Emergency task terminated
+[Thu Apr 23 12:24:04 2026] Mini-OS System Started
